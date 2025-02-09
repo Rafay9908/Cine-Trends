@@ -3,4 +3,3 @@ const IMAGE_URL = "https://image.tmdb.org/t/p"
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
-console.log("hello", apiKey);
