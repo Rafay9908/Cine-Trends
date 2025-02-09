@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import SliderComponent from "../components/SliderComponent";
 
 import play from "../assets/play.svg";
+import useFetchData from "../api/useFetchData";
+import IMAGE_URL from "../api/Api";
 
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -11,7 +13,12 @@ function Home() {
   const [exploreMovies, setExploreMovies] = useState([]);
   const [index, setIndex] = useState(0);
 
-  const slicedData = exploreMovies.slice(0, 5);
+  const {data, error} = useFetchData();
+
+  console.log("haha", data);
+
+
+  const slicedData = data.slice(0, 5);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -99,7 +106,7 @@ function Home() {
       </div>
 
       <div className="container">
-        <SliderComponent heading={"Trending Movies"} data={trendingMovies} seeMoreLink={'/featured-movies'} />
+        <SliderComponent heading={"Trending Movies"} data={data} seeMoreLink={'/featured-movies'} />
         <SliderComponent heading={"New Arrival"} data={newMovies} />
         <SliderComponent heading={"Trending TV Series"} data={trendingSeries} />
         <SliderComponent heading={"New TV Series"} data={newSeries} />

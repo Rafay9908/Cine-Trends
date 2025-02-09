@@ -9,6 +9,7 @@ import arrowRight from "../assets/arrow-right.svg";
 import imdb from "../assets/imdb.svg";
 import tomato from "../assets/tomato.svg";
 import { Link } from "react-router-dom";
+import IMAGE_URL  from '../api/Api'
 
 function SliderComponent({ 
   heading, 
@@ -106,6 +107,8 @@ function SliderComponent({
       },
     ],
   };
+
+  console.log("sliderComponent", data)
 
   
 

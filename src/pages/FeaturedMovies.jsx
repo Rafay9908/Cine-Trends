@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
 import MovieGrid from '../components/MovieGrid'
+import useFetchData from '../api/useFetchData';
 
 function FeaturedMovies() {
-    const [trendingMovies, setTrendingMovies] = useState([]);
+   const {data, error} = useFetchData();
+
+   console.log('fetched Data', data)
     
 
   return (
     <>
     <div className='container pt-[82px]'>
-    <MovieGrid data={trendingMovies} />
+    <MovieGrid data={data} />
     </div>
     
     </>

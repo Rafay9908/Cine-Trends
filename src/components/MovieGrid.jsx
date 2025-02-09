@@ -1,6 +1,7 @@
 import React from 'react';
+import IMAGE_URL from '../api/Api';
 
-function MovieGrid({ data = [] }) {
+function MovieGrid({ data }) {
   return (
     <> 
       <div className="my-16 grid grid-cols-5 gap-y-16 justify-items-center w-5/5 mx-auto">
