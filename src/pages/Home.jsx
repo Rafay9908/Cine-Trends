@@ -13,7 +13,7 @@ function Home() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    // Trending Movies
+    // Trending Moviesddd
     const fetchTrendingMovies = () => {
       fetch(`${API_URL}/trending/movie/week?api_key=${API_KEY}`)
         .then((res) => res.json())
