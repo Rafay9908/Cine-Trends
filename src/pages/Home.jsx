@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { API_KEY, API_URL, IMAGE_URL } from "../Api";
 import SliderComponent from "../components/SliderComponent";
 
 import play from "../assets/play.svg";
@@ -12,51 +11,6 @@ function Home() {
   const [exploreMovies, setExploreMovies] = useState([]);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    // Trending Moviesddd
-    const fetchTrendingMovies = () => {
-      fetch(`${API_URL}/trending/movie/week?api_key=${API_KEY}`)
-        .then((res) => res.json())
-        .then((res) => setTrendingMovies(res.results));
-    };
-    fetchTrendingMovies();
-
-    // New Movies
-    const fetchNewMovies = () => {
-      fetch(`${API_URL}/movie/now_playing?api_key=${API_KEY}`)
-        .then((res) => res.json())
-        .then((res) => setNewMovies(res.results));
-    };
-    fetchNewMovies();
-
-    // Trending Series
-
-    const fetchTrendingSeries = () => {
-      fetch(`${API_URL}/trending/tv/day?api_key=${API_KEY}`)
-        .then((res) => res.json())
-        .then((res) => setTrendingSeries(res.results));
-    };
-    fetchTrendingSeries();
-
-    // New Series
-
-    const fetchNewSeries = () => {
-      fetch(`${API_URL}/tv/airing_today?api_key=${API_KEY}`)
-        .then((res) => res.json())
-        .then((res) => setNewSeries(res.results));
-    };
-    fetchNewSeries();
-
-    // Explore Movies
-
-    const fetchExploreMovies = () => {
-      fetch(`${API_URL}/discover/movie?api_key=${API_KEY}`)
-        .then((res) => res.json())
-        .then((res) => setExploreMovies(res.results));
-    };
-    fetchExploreMovies();
-  }, []);
-
   const slicedData = exploreMovies.slice(0, 5);
 
   useEffect(() => {
@@ -66,8 +20,6 @@ function Home() {
 
     return () => clearInterval(interval);
   }, [slicedData.length]);
-
-  console.log(slicedData[0]);
 
   return (
     <>

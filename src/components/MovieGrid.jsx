@@ -1,5 +1,4 @@
 import React from 'react';
-import { IMAGE_URL } from '../Api';
 
 function MovieGrid({ data = [] }) {
   return (
