@@ -13,9 +13,52 @@ function Home() {
   const [exploreMovies, setExploreMovies] = useState([]);
   const [index, setIndex] = useState(0);
 
-  const {data, error} = useFetchData();
+  // useEffect(() => {
+    // Trending Movies
+    // const fetchTrendingMovies = () => {
+    //   fetch(`${API_URL}/trending/movie/week?api_key=${API_KEY}`)
+    //     .then((res) => res.json())
+    //     .then((res) => setTrendingMovies(res.results));
+    // };
+    // fetchTrendingMovies();
 
-  console.log("haha", data);
+    // New Movies
+    // const fetchNewMovies = () => {
+    //   fetch(`${API_URL}/movie/now_playing?api_key=${API_KEY}`)
+    //     .then((res) => res.json())
+    //     .then((res) => setNewMovies(res.results));
+    // };
+    // fetchNewMovies();
+
+    // Trending Series
+
+    // const fetchTrendingSeries = () => {
+    //   fetch(`${API_URL}/trending/tv/day?api_key=${API_KEY}`)
+    //     .then((res) => res.json())
+    //     .then((res) => setTrendingSeries(res.results));
+    // };
+    // fetchTrendingSeries();
+
+    // New Series
+
+    // const fetchNewSeries = () => {
+    //   fetch(`${API_URL}/tv/airing_today?api_key=${API_KEY}`)
+    //     .then((res) => res.json())
+    //     .then((res) => setNewSeries(res.results));
+    // };
+    // fetchNewSeries();
+
+    // Explore Movies
+
+  //   const fetchExploreMovies = () => {
+  //     fetch(`${API_URL}/discover/movie?api_key=${API_KEY}`)
+  //       .then((res) => res.json())
+  //       .then((res) => setExploreMovies(res.results));
+  //   };
+  //   fetchExploreMovies();
+  // }, []);
+
+  const {data, error} = useFetchData();
 
 
   const slicedData = data.slice(0, 5);
